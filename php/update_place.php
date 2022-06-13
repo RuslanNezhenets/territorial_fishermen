@@ -1,6 +1,10 @@
 <?php
     if (isset($_POST["ID"]) && isset($_POST["PlaceName"]) && isset($_POST["AdminBodyID"])){
 
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+
         $id = $_POST["ID"];
         $placeName = $_POST["PlaceName"];
         $adminBodyID = intval($_POST["AdminBodyID"]);

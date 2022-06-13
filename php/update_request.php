@@ -1,6 +1,10 @@
 <?php
     if (isset($_POST["ID"]) && isset($_POST["DateOfFishing"]) && isset($_POST["Permission"]) && isset($_POST["PersonID"]) && isset($_POST["PlaceID"])){
 
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+
         $id = $_POST["ID"];
         $dateReq = $_POST["DateReq"];
         $dateOfFishing = $_POST["DateOfFishing"];

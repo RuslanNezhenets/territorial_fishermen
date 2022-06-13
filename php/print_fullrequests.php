@@ -2,6 +2,10 @@
     try {
         $conn = new PDO("mysql:host=localhost;  dbname=territorial_fishermen", "Ruslan", "123456");
 
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+
         $sql = "SELECT requests.ID, people.PersonName, people.Surname, requests.DateReq, requests.DateOfFishing, requests.Permission,
         allowedplace.PlaceName, adminbody.AdminBodyName, adminbody.Province
         FROM requests
