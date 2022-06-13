@@ -2,6 +2,8 @@
     try {
         $conn = new PDO("mysql:host=localhost;  dbname=territorial_fishermen", "Ruslan", "123456");
 
+        header('Access-Control-Allow-Headers: *'); 
+
         $sql = "SELECT *
         FROM people;";
 
