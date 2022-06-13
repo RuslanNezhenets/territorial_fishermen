@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css?dds">
+	<title></title>
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<nav class="nav">
+				<ul class="nav__list">
+					<li class="nav__item">
+						<a class="nav__link has-subnav" href="#">Добавить запись</a>
+							<ul class="subnav">
+							<li>
+								<a class="subnav__link" id="add_people" href="#">Добавить человека</a>
+							</li>
+							<li>
+								<a class="subnav__link" id="add_place" href="#">Добавить место</a>
+							</li>
+							<li>
+								<a class="subnav__link" id="add_admin" href="#">Добавить администрацию</a>
+							</li>
+							<li>
+								<a class="subnav__link" id="add_request" href="#">Добавить заявку</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link has-subnav" href="#">Вывести таблицу</a>
+						<ul class="subnav">
+							<li>
+								<a class="subnav__link" id="show_people" href="#">Люди</a>
+							</li>
+							<li>
+								<a class="subnav__link" id="show_place" href="#">Места</a>
+							</li>
+							<li>
+								<a class="subnav__link" id="show_admin" href="#">Администрации</a>
+							</li>
+							<li>
+								<a class="subnav__link" id="show_requests" href="#">Заявки</a>
+							</li>
+							<li>
+								<a class="subnav__link" id="show_fullrequests" href="#">Полная информацию про заявки</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<form class="people form">
+			<input type="text" name="Name" id="name" placeholder="Имя человека">
+			<input type="text" name="Surname" id="surname" placeholder="Фамилия человека">
+			<button type="button" class="btn" id="people-btn">Добавить нового человека</button>
+		</form>
+		<form class="place form">
+			<input type="text" name="PlaceName" id="placeName" placeholder="Название места">
+			<input type="text" name="AdminBodyID" id="adminBodyID" placeholder="ID администрации">
+			<button type="button" class="btn" id="place-btn">Добавить новое место</button>
+		</form>
+		<form class="admin form">
+			<input type="text" name="AdminBodyName" id="adminBodyName" placeholder="Название администрации">
+			<input type="text" name="Province" id="province" placeholder="Название провинции">
+			<button type="button" class="btn" id="admin-btn">Добавить новую администрацию</button>
+		</form>
+		<form class="request form">
+			<input type="text" name="DateReq" id="dateReq" placeholder="Дата подачи заявки">
+			<input type="text" name="DateOfFishing" id="dateOfFishing" placeholder="Дата рыбалки">
+			<input type="text" name="Permission" id="province" placeholder="Разрешение">
+			<input type="text" name="PersonID" id="personID" placeholder="ID человека">
+			<input type="text" name="PlaceID" id="placeID" placeholder="ID места">
+			<button type="button" class="btn" id="request-btn">Добавить заявку</button>
+		</form>
+
+		<form class="people-update form">
+			<input type="text" name="Name" id="name_update" placeholder="Имя человека">
+			<input type="text" name="Surname" id="surname_update" placeholder="Фамилия человека">
+			<button type="button" class="btn" id="people-update-btn">Отредактировать человека</button>
+		</form>
+		<form class="place-update form">
+			<input type="text" name="PlaceName" id="placeName_update" placeholder="Название места">
+			<input type="text" name="AdminBodyID" id="adminBodyID_update" placeholder="ID администрации">
+			<button type="button" class="btn" id="place-update-btn">Отредактировать место</button>
+		</form>
+		<form class="admin-update form">
+			<input type="text" name="AdminBodyName" id="adminBodyName_update" placeholder="Название администрации">
+			<input type="text" name="Province" id="province_update" placeholder="Название провинции">
+			<button type="button" class="btn" id="admin-update-btn">Отредактировать администрацию</button>
+		</form>
+		<form class="request-update form">
+			<input type="text" name="DateReq" id="dateReq_update" placeholder="Дата подачи заявки">
+			<input type="text" name="DateOfFishing" id="dateOfFishing_update" placeholder="Дата рыбалки">
+			<input type="text" name="Permission" id="province_update" placeholder="Разрешение">
+			<input type="text" name="PersonID" id="personID_update" placeholder="ID человека">
+			<input type="text" name="PlaceID" id="placeID_update" placeholder="ID места">
+			<button type="button" class="btn" id="request-update-btn">Отредактировать заявку</button>
+		</form>
+
+		<div id="output"></div>
+		<div id="message"></div>
+	</div>
+	
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js?jfk"></script>
+</body>
+</html>
