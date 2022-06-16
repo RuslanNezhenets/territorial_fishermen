@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css?dds">
+	<link rel="stylesheet" href="style.css?ddg">
 	<title></title>
 </head>
 <body>
@@ -46,7 +46,13 @@
 							<li>
 								<a class="subnav__link" id="show_fullrequests" href="#">Полная информацию про заявки</a>
 							</li>
+							<li>
+								<a class="subnav__link" id="show_dataRequests" href="#">Заявки на указанную дату</a>
+							</li>
 						</ul>
+					</li>
+					<li class="nav__item">
+						<a class="nav__link" id="about" href="#">О сайте</a>
 					</li>
 				</ul>
 			</nav>
@@ -76,6 +82,14 @@
 			<button type="button" class="btn" id="request-btn">Добавить заявку</button>
 		</form>
 
+		<form class="form" id="calendar">
+			<div id="calendar_inner">
+				<p id="calendar_text">Выберите дату:</p>
+				<input id="calendar_date" type="date" name="calendar" max="2022-06-26" min="2022-06-20">
+				<div id="calendar_search">Поиск</div>
+			</div>
+  		</form>
+
 		<form class="people-update form">
 			<input type="text" name="Name" id="name_update" placeholder="Имя человека">
 			<input type="text" name="Surname" id="surname_update" placeholder="Фамилия человека">
@@ -100,12 +114,17 @@
 			<button type="button" class="btn" id="request-update-btn">Отредактировать заявку</button>
 		</form>
 
+		<div class="about_inner">
+			<div class="about_title">Про сайт</div>
+			<div class="about_text">Україна, КПІ, ФІОТ, каф. ІСТ, курс ПІС, Курсова робота з баз даних. Викона студент групи ІС-02 Ніженець Руслан</div>
+		</div>
+
 		<div id="output"></div>
 		<div id="message"></div>
 	</div>
 	
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="app.js?jfk"></script>
+    <script src="app.js?sss"></script>
 </body>
 </html>

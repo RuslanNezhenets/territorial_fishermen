@@ -7,7 +7,7 @@
 
         $dateReq = $_POST["DateReq"];
         $dateOfFishing = $_POST["DateOfFishing"];
-        $permission = boolval($_POST["Permission"]);
+        $permission = intval($_POST["Permission"]);
         $personID = intval($_POST["PersonID"]);
         $placeID = intval($_POST["PlaceID"]);
 
@@ -16,9 +16,19 @@
             $sql = "INSERT INTO requests (DateReq, DateOfFishing, Permission, PersonID, PlaceID)
             VALUES('$dateReq', '$dateOfFishing', '$permission', '$personID', '$placeID')";
 
-            $conn->exec($sql);
-            
-            print "<h3>Заявка успешно добавлена<h3>";
+            $search = "SELECT * FROM requests WHERE DateOfFishing = '".$dateOfFishing."' && PlaceID = $placeID && Permission = 1";
+
+            $result = $conn->query($search);
+
+            if(!($result->fetch())){
+                $sql = "INSERT INTO requests (DateReq, DateOfFishing, Permission, PersonID, PlaceID)
+                VALUES('$dateReq', '$dateOfFishing', '$permission', '$personID', '$placeID')";
+                $conn->exec($sql);
+                print "<h3>Заявка успешно добавлена<h3>";
+            }
+            else{
+                print "<h3>Данное место занято на эту дату<h3>";
+            }
 
         }
         catch (PDOException $e) {

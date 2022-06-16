@@ -2,6 +2,7 @@ $('.subnav__link').click(function(){
     $('form').hide();
     $('#requests').hide();
     $('#output').html('');
+    $('.about_inner').hide();
 });
 
 $('#add_people').click(function(){
@@ -28,18 +29,14 @@ $('#update_admin').click(function(){
 $('#update_requests').click(function(){
     $('.request-update').show();
 });
-// $('#delete_people').click(function(){
-//     $('.people-delete').show();
-// });
-// $('#delete_place').click(function(){
-//     $('.place-delete').show();
-// });
-// $('#delete_admin').click(function(){
-//     $('.admin-delete').show();
-// });
-// $('#delete_requests').click(function(){
-//     $('.request-delete').show();
-// });
+$('#about').click(function(){
+    $('.about_inner').show();
+    $('#output').html('');
+    $('form').hide();
+    $('#requests').hide();
+});
+
+
 
 //==================== Add ====================
 
@@ -224,6 +221,34 @@ $('#show_fullrequests').on('click', function(e){
     request.send();
 })
 
+$('#show_dataRequests').on('click', function(e){
+    $('#calendar').show();
+})
+
+$('#calendar_search').on('click', function(e){
+    let formData = new FormData();
+
+    if($('#calendar_date').val()){
+        formData.append('Date', $('#calendar_date').val());
+    }
+    else{
+        var today = new Date(Date.now());
+        var string = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        formData.append('Date', string);
+    }
+
+    var request = new XMLHttpRequest();
+
+    function reqReadyStateChange() {
+        if(request.readyState == 4 && request.status == 200){
+            document.getElementById("output").innerHTML = request.responseText;
+        }
+    }
+
+    request.open("POST", "http://localhost/ПИС_Курсовая/php/print_dateRequests.php");
+    request.onreadystatechange = reqReadyStateChange;
+    request.send(formData);
+})
 //==================== Update ====================
 
 function UpdatePeople(){
@@ -321,10 +346,15 @@ function UpdateRequest(){
         $('#request-update-btn').on('click', function(e){
 
             formData.append('DateReq', $('#dateReq_update').val());
+            $('#dateReq_update').val('');
             formData.append('DateOfFishing', $('#dateOfFishing_update').val());
+            $('#dateOfFishing_update').val('');
             formData.append('Permission', $('#permission_update').val());
+            $('#permission_update').val('');
             formData.append('PersonID', $('#personID_update').val());
+            $('#personID_update').val('');
             formData.append('PlaceID', $('#placeID_update').val());
+            $('#placeID_update').val('');
 
             var request = new XMLHttpRequest();
 

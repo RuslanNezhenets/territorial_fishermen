@@ -36,7 +36,7 @@
                         echo "<td>" . $row["Surname"] . "</td>";
                         echo "<td>" . $row["DateReq"] . "</td>";
                         echo "<td>" . $row["DateOfFishing"] . "</td>";
-                        echo "<td>" . $row["Permission"] . "</td>";
+                        echo "<td>" . (isset($row['Permission']) ? (boolval($row['Permission']) ? 'Есть' : 'Нету') : "") . "</td>";
                         echo "<td>" . $row["PlaceName"] . "</td>";
                         echo "<td>" . $row["AdminBodyName"] . "</td>";
                         echo "<td>" . $row["Province"] . "</td>";

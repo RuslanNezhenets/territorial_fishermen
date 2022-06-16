@@ -1,11 +1,9 @@
 body {
   height: 100vh;
   width: 100%;
-  /*background: url(backgr.jpg) no-repeat;*/
   background-size: 100%;
   background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(backgr.jpg) no-repeat;
   background-attachment: fixed;
-  /*backdrop-filter: brightness(30%);*/
 
   margin: 0;
 
@@ -127,7 +125,6 @@ th, td {
 .nav__list{
   display: flex;
   width: 100%;
-  /*margin-top: 10px;*/
   margin: 0;
   padding: 0;
 }
@@ -210,4 +207,52 @@ th, td {
 .delete-btn{
   width: 100px;
   margin: 0;
+}
+
+
+#calendar_inner{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+#calendar_text{
+  color: #fff;
+  font-weight: bold;
+}
+
+#calendar_date{
+  width: 200px;
+  margin: auto 20px;
+}
+
+#calendar_search{
+  color: #fff;
+  font-weight: bold;
+  margin: auto 0;
+  background-color: #0080FF;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+#calendar_search:hover{
+  cursor: pointer;
+  background-color: blue;
+}
+
+.about_inner{
+  width: 100%;
+  display: none;
+  position: fixed;
+  top: 50px;
+}
+
+.about_title{
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+}
+.about_text{
+  color: #fff;
+  font-size: 20px;
 }
